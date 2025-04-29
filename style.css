@@ -1,0 +1,280 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --branco: #fff;
+    --cinzaClaro: #F5F5F5;
+    --azulPrincipal: #1e88e5;
+    --azulClaro: #90caf9;
+    --laranjaPrincipal: #fb8c00;
+    --laranjaClaro: #ffcc80;
+    --preto: #212121;
+
+    --textoComum: 'Roboto', sans-serif;
+    --textoTitulo: 'Lato', sans-serif;
+    --textoHeadings: 'Montserrat', sans-serif;
+
+    /* Sugestão 1: gradiente mais escuro para melhorar contraste do texto */
+    --bgGradient: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    /* Sugestão 1: usando --bgGradient para escurecer mais */
+    /* Sugestão 4: primeiro tenta WebP otimizado, depois fallback JPG */
+    background-image:
+        var(--bgGradient),
+        url('/imgs/bg.webp'),
+        url('/imgs/bg.jpg');
+    background-size: cover;
+    font-family: var(--textoComum);
+    color: var(--preto);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* Sugestão 2: aplicar Montserrat em todos os headings */
+    font-family: var(--textoHeadings);
+}
+
+header {
+    width: 100%;
+}
+
+.headerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--branco);
+    color: var(--azulPrincipal);
+    flex-wrap: wrap;
+}
+.headerGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logoImg {
+    max-width: 40px;
+}
+
+.headerTitle {
+    font-family: var(--textoTitulo);
+    font-size: 28px;
+    color: var(--azulPrincipal);
+}  
+.headerLinks {
+    display: flex;
+    gap: 20px;
+}
+.headerLink {
+    font-family: var(--textoComum);
+    text-decoration: none;
+    color: var(--azulPrincipal);
+    transition: color 0.3s;
+}
+.headerLink:hover {
+    color: var(--laranjaClaro);
+}
+
+main {
+    padding: 20px;
+}
+
+.mainContainerChoose {
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.mainTitle {
+    font-family: var(--textoTitulo);
+    font-size: 28px;
+    color: var(--branco);
+    margin-bottom: 20px;
+}
+.mainButton {
+    font-family: var(--textoComum);
+    background-color: var(--laranjaPrincipal);
+    color: var(--branco);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    width: 160px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.mainButton:hover {
+    background-color: var(--laranjaClaro);
+    transform: scale(1.05);
+}
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mainImageAdote {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+}
+
+.mainImageAdote:hover {
+    transform: scale(1.1);
+}
+
+.mainSectionAdote {
+    flex: 1;
+    font-size: 18px;
+}
+
+.mainTitleAdote {
+    font-family: var(--textoTitulo);
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--azulPrincipal);
+}
+.mainPet {
+    margin: 60px 0;
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.mainPet h4 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--azulPrincipal);
+    position: relative;
+    display: inline-block;
+}
+.mainPet h4::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: var(--laranjaPrincipal);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.mainPetInfo {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.mainPetContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    transition: transform 0.5s ease;
+    align-items: stretch;
+}
+
+.subPetContainer {
+    background-color: var(--branco);
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subPetContainer:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.subPetContainer img {
+    max-width: 100px;
+    padding: 8px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    background-color: var(--cinzaClaro);
+    transition: transform 0.3s ease;
+}
+
+.subPetContainer img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+.subPetContainer p {
+    font-family: var(--textoComum);
+    font-size: 14px;
+    color: var(--preto);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+footer {
+    background-color: var(--cinzaClaro);
+    padding: 20px 40px;
+    margin-top: 40px;
+}
+
+.container-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.container-map h5 {
+    font-family: var(--textoHeadings);
+    color: #1D1D1D;
+    font-size: 35px;
+}
+.container-map p {
+    /* já usa Montserrat */
+    color: #424242;
+}
+
+.map {
+    width: 100%;
+    height: 250px;
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mainImagePqc {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
